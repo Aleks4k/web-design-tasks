@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drugi kolokvijum</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta charset = "utf-8">
+	<style>
+		#pos{
+			margin-top: 150px;
+		}
+		h3 {
+			display: inline-block;
+		}
+		#animacija{
+			background-color: blue;
+			position: absolute;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$("#animacija").click(function(){
+				$("#animacija").animate({left: '250px'});
+			});
+		});
+		$(document).ready(function(){
+			$("#toggle").click(function () {
+				$(".za_tog").toggle();
+			});
+		});
+		function imeProvera(){
+			var name = document.getElementById("name_surname");
+			var ime_ispravnost = document.getElementById("ime_ispravnost");
+			var RegexIme = /[A-Z]+[a-z]+[0-9]+[^A-Za-z0-9]+/g;// \s predstavlja obavezan space.
+			if(!RegexIme.test(name.value)){
+				ime_ispravnost.style.color = "red";
+				ime_ispravnost.innerHTML = "Nije ispravno ime.";
+			} else {
+				ime_ispravnost.style.color = "green";
+				ime_ispravnost.innerHTML = "Uneli ste dobro ime.";
+			}
+		}
+		function checkJMBG(){
+			var jmbg = document.getElementById("user_id");
+			var jmbg_ispravnost = document.getElementById("jmbg_ispravnost");
+			var RegexJmbg = /^[0-9]{13}$/;
+			if(!RegexJmbg.test(jmbg.value)){
+				jmbg_ispravnost.style.color = "red";
+				jmbg_ispravnost.innerHTML = "Nije ispravan JMBG.";
+			} else {
+				jmbg_ispravnost.style.color = "green";
+				jmbg_ispravnost.innerHTML = "Uneli ste ispravan JMBG.";
+			}
+		}
+		function checkLicence(){
+			var lic = document.getElementById("licence_id");
+			var ispravnost = document.getElementById("licence_ispravnost");
+			var RegexLic = /^[A-Z]{2}\-[0-9]{3}\-[A-Z]{2}$/;
+			if(!RegexLic.test(lic.value)){
+				ispravnost.style.color = "red";
+				ispravnost.innerHTML = "Nisu dobre tablice.";
+			} else {
+				ispravnost.style.color = "green";
+				ispravnost.innerHTML = "Uneli ste dobre tablice.";
+			}
+		}
+		function checkPotrosnja(){
+			var potr = document.getElementById("potrosnja_id");
+			var ispravnost = document.getElementById("potrosnja_ispravnost");
+			var RegexPotr = /^\d+$/;
+			if(!RegexPotr.test(potr.value)){
+				ispravnost.style.color = "red";
+				ispravnost.innerHTML = "Nije dobra potrosnja.";
+			} else {
+				ispravnost.style.color = "green";
+				ispravnost.innerHTML = "Uneli ste dobru potrosnju.";
+			}
+		}
+		function checkKilometraza(){
+			var kilom = document.getElementById("kilometraza_id");
+			var ispravnost = document.getElementById("kilometraza_ispravnost");
+			var RegexPotr = /^[1-9]{1}\d{2}$/;
+			if(!RegexPotr.test(kilom.value)){
+				ispravnost.style.color = "red";
+				ispravnost.innerHTML = "Nije dobra kilometraza.";
+			} else {
+				ispravnost.style.color = "green";
+				ispravnost.innerHTML = "Uneli ste dobru kilometrazu.";
+			}
+		}
+		
+		function izracunaj(){
+			var potrosnja_na_100 = document.getElementById("potrosnja_id").value;
+			var predjena = document.getElementById("kilometraza_id").value;
+			var potroseno;
+			var ime = document.getElementById("name_surname").value;
+			var reg = document.getElementById("licence_id").value;
+			potroseno = (potrosnja_na_100/100)*predjena;
+			var para = document.getElementById("odgovor");
+			para.innerHTML = ime + " je vozilom " + reg + " prevezao " + predjena + " kilometara i potrošio " + potroseno + " litara goriva.";
+			//Marko Marković je vozilom XX-123-XX prevezao XXX kilometara i potrošio XX litara goriva.
+		}	
+	</script>
+</head>
+<body>
+	<div><h3>Ime i prezime:</h3>
+	<input type = "text" placeholder = "Ime i prezime" id = "name_surname" onkeyup = "imeProvera()">
+	<p id = "ime_ispravnost"></p></div>
+	<div><h3>JMBG:</h3>
+	<input type = "text" placeholder = "JMBG" id = "user_id" onkeyup = "checkJMBG()">
+	<p id = "jmbg_ispravnost"></p></div>
+	<div><h3>Unesite vašu registarsku oznaku:</h3>
+	<input type = "text" placeholder = "AA-123-AA" id = "licence_id" onkeyup = "checkLicence()">
+	<p id = "licence_ispravnost"></p></div>
+	<div><h3>Unesite vašu potrošnju:</h3>
+	<input type = "text" placeholder = "6" id = "potrosnja_id" onkeyup = "checkPotrosnja()">
+	<p id = "potrosnja_ispravnost"></p></div>
+	<div><h3>Unesite predjenu kilometražu:</h3>
+	<input type = "text" placeholder = "200" id = "kilometraza_id" onkeyup = "checkKilometraza()">
+	<p id = "kilometraza_ispravnost"></p></div>
+	<button onclick = "izracunaj()">Submit</button><br>
+	<p id = "odgovor"></p>
+	<br>
+	<div id = "animacija"></div>
+	<div id = "pos">
+		<h2>Toggle:</h2>
+		<p class = "za_tog">Toggle prvi</p>
+		<p class = "za_tog">Toggle drugi</p>
+		<p class = "za_tog">Toggle treci</p>
+		<button id="toggle">Switch on/off</button>
+	</div>
+</body>
+</html>

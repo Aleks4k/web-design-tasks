@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	font-family: 'Calibri Light';
+}
+
+#header_style {
+	background-image : url('../images/header-bg.jpg');
+	width: 100%;
+	height: 150px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	text-align: right;
+}
+
+#header_style > #header_logo {
+	width: 200px;
+	margin-top: 25px;
+	float: left;
+	margin-left: 60px;
+}
+
+#h2_header {
+	display: inline-block;
+	color: white;
+	margin-top: 50px;
+	margin-right: 150px;
+	text-height: 10px;
+}
+
+#nav_style {
+	background-color:rgba(0,0,255,0.9);
+	height: 50px;
+	text-align: center;
+	padding-top: 15px;
+}
+
+#nav_style > ul {
+	list-style: none;
+}
+
+#nav_style > ul > li {
+	display: inline-block;
+	padding-left: 20px;
+}
+
+li > a {
+	text-decoration: none;
+	color: black;
+}
+
+#main_style{
+	float:left;
+	width: 65%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 80px;
+	clear: both;
+	background-color: OldLace;
+	border-right: 1px solid Blue;
+}
+
+#table_header_style{
+	background-color: #747878;
+}
+
+td{
+	border-bottom: 1px solid white;
+}
+.table1{
+	background-color: Azure;
+}
+.table2{
+	background-color: Gainsboro;
+}
+#table_style {
+	width: 80%;
+	height: 100px;
+}
+#lele_stil {
+	display: inline-block;
+	margin-top: 30px;
+	margin-left: 15px;
+}
+
+#lele_stil2 {
+	margin-left: 55px;
+	display: inline-block;
+}
+
+#div_style {
+	width: 80%;
+	margin-bottom: 10px;
+}
+
+#lista_stil {
+	float:right;
+	display: inline-block;
+	margin-top: 30px;
+	margin-right: 120px;
+}
+
+#lista_stil2 {
+	float:right;
+	display: inline-block;
+	margin-right: 85px;
+}
+
+#section_style{
+	margin-top: 150px;
+	padding: 20px;
+	width: 80%;
+	height: 200px;
+	background-color: DeepSkyBlue;
+}
+
+#paragraf_style{
+	display: inline-block;
+	font-weight: bold;
+	font-size: 20px;
+	width: 60%;
+	text-align: left;
+	height: 100px;
+	padding-top: 30px;
+}
+
+#slika_style {
+	height: 150px;
+	float: right;
+	width: 30%;
+	background-image : url('../images/slika.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+#footer_style{
+	clear: both;
+	background-image : url('../images/header-bg.jpg');
+	width: 100%;
+	height: 100px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	text-align: right;
+	padding-left: 60px;
+}
+
+#footer_h2_style{
+	display: inline-block;
+	color: white;
+	margin-right: 150px;
+	text-height: 10px;
+	margin-top: 35px;
+}
+
+.facebook_logo {
+	float: left;
+	padding-left: 15px;
+	margin-top: 35px;
+}
+
+aside {
+	float:right;
+	width: 35%;
+	padding: 20px;
+	height: 685px;
+	background-color: NavajoWhite;
+}
+
+.slika1_style{
+	margin-top: 15px;
+	border: 1px solid blue;
+	width: 50%;
+	margin-left: 90px;
+}
+

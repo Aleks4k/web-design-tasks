@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drugi kolokvijum</title>
+    <link href="https://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet"> 
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <style type = "text/css">
+        #main {
+            
+            width : 60%;
+            margin : 40px auto;
+        }
+        #main > label {
+            float:left;
+        }
+        #main > input {
+            float : right;
+        }
+        #main > p {
+            float : right;
+        }
+        #dugme {
+            width : 20%;
+            margin :auto;
+        }
+        #dragovanje {
+            background-color: aqua;
+            width: 150px;
+            height: 150px;
+        }
+        #main >#izracunato {
+            margin : 10px auto;
+        }
+    </style>
+    <script type = "text/javascript">
+        function provjeraImePrez(){
+            var x = document.getElementById("imeprez");
+            var rez = document.getElementById("provjeraime");
+            var regEx = /^[A-Z]{1}[a-z]+\s[A-Z]{1}[a-z]+$/;
+            
+            if (!regEx.test(x.value)){
+                rez.innerHTML = "Unos nije validan!";
+                rez.style.color = "red";
+
+            }
+            else {
+                rez.innerHTML = "Unos je validan!";
+                rez.style.color = "green";
+            }
+
+        }
+        function provjeraMail(){
+            var x = document.getElementById("mail");
+            var rez = document.getElementById("provjeramail");
+            var regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;// + Oznacava da ono ispred mora da se ponovi jednom ili vise puta.
+            
+            if (!regEx.test(x.value)){
+                rez.innerHTML = "Unos nije validan!";
+                rez.style.color = "red";
+
+            }
+            else {
+                rez.innerHTML = "Unos je validan!";
+                rez.style.color = "green";
+            }
+
+        }
+        function provjeraIndex(){
+            var x = document.getElementById("index");
+            var rez = document.getElementById("provjeraindex");
+            var regEx = /^[0-9]{4}\/[0-9]{6}$/;//2021/201721
+			var regEx = /^[0-9]{10}/;//2021201721
+            
+            if (!regEx.test(x.value)){
+                rez.innerHTML = "Unos nije validan!";
+                rez.style.color = "red";
+
+            }
+            else {
+                rez.innerHTML = "Unos je validan!";
+                rez.style.color = "green";
+            }
+
+        }
+        function provjeraOcjena3(){
+            var x = document.getElementById("ocjena3");
+            var rez = document.getElementById("provjera3");
+            var regEx = /^[6|7|8|9]|10$/; //Ovo |10 znači da može da ide eventualno još 10 i ništa dalje od toga. Kad bi bilo 15 moglo bi 15 al ne bi moglo 13.
+            
+            if (!regEx.test(x.value)){
+                rez.innerHTML = "Unos nije validan!";
+                rez.style.color = "red";
+
+            }
+            else {
+                rez.innerHTML = "Unos je validan!";
+                rez.style.color = "green";
+            }
+
+        }
+        function provjeraOcjena2(){
+            var x = document.getElementById("ocjena2");
+            var rez = document.getElementById("provjera2");
+            var regEx = /^[6|7|8|9]|10$/;
+            
+            if (!regEx.test(x.value)){
+                rez.innerHTML = "Unos nije validan!";
+                rez.style.color = "red";
+
+            }
+            else {
+                rez.innerHTML = "Unos je validan!";
+                rez.style.color = "green";
+            }
+
+        }
+        function provjeraOcjena1(){
+            var x = document.getElementById("ocjena1");
+            var rez = document.getElementById("provjera1");
+            var regEx = /^[6|7|8|9]|10$/;
+            
+            if (!regEx.test(x.value)){
+                rez.innerHTML = "Unos nije validan!";
+                rez.style.color = "red";
+
+            }
+            else {
+                rez.innerHTML = "Unos je validan!";
+                rez.style.color = "green";
+            }
+
+        }
+        function izracunaj(){
+            var programiranje = document.getElementById("ocjena1").value;
+            var vebdizajn = document.getElementById("ocjena2").value;
+            var engleski  = document.getElementById("ocjena3").value;
+            var prog = parseInt(programiranje);
+            var veb = parseInt(vebdizajn);
+            var eng = parseInt(engleski);
+            var rez = ( prog + veb + eng)/3;
+            var ime = document.getElementById("imeprez").value;
+            var izrac = document.getElementById("izracunato");
+            izrac.innerHTML = "Prosecna ocjena studenta "+ ime +" je " + rez;
+        
+        }
+        $(function(){
+			$("#tabovi").tabs();
+		});
+
+        $(function(){
+			$("#akordacija").accordion();			
+		});
+
+        $(function(){
+			$("#dragovanje").draggable();
+		});
+        
+
+    </script>
+
+</head>
+<body>
+    <div id ="main">
+    <label>Ime i prezime</label><input type = "text" id="imeprez" name="imeprez" onkeyup="provjeraImePrez();"><br>
+    <p id ="provjeraime"></p><br><br><br>
+
+    <label>Email</label><input type = "text" id="mail" name="email" onkeyup="provjeraMail();"><br>
+    <p id ="provjeramail"></p><br><br><br>
+
+    <label>Broj indeksa</label><input type = "text" id="index" name="indexb" onkeyup="provjeraIndex();"><br>
+    <p id ="provjeraindex"></p><br><br><br>
+
+    <label> Ocjena iz uvoda u programiranje</label><input type = "text" id = "ocjena1" name="ocjenaprva" onkeyup="provjeraOcjena1();"><br>
+    <p id ="provjera1"></p><br><br><br>
+
+    <label>Ocjena iz Veb Dizajna</label><input type = "text" id = "ocjena2" name="ocjenadruga" onkeyup="provjeraOcjena2();"><br>
+    <p id ="provjera2"></p><br><br><br>
+
+    <label>Ocjena iz engleskog</label><input type = "text" id = "ocjena3" name="ocjenatreca" onkeyup="provjeraOcjena3();"><br>
+    <p id ="provjera3"></p><br><br><br>
+    <div id ="dugme">
+    <button onclick = "izracunaj();" id = "racunanje">Izracunaj prosjecnu ocjenu</button><br><Br>
+    </div><br><br><br>
+    <p id = "izracunato"></p>
+    </div><br><br><br>
+     
+    <div id = "dragovanje"></div><br><Br><br>
+        <div id="tabovi">
+            <ul>
+                <li><a href="#mitar">Mitar</a></li>
+                <li><a href="#veljko">Veljko</a></li>
+                <li><a href="#momcilo">Momcilo</a></li>
+            </ul>
+            <div id="mitar">
+            <p>
+                Mitar je dobar momak koji ide sa mnom na smjer
+            </p>
+        </div>
+        
+        <div id="veljko">
+            <p>
+                Veljko je dobar momak koji ide sa mnom na smjer
+            </p>
+        </div>
+            
+        <div id="momcilo">
+            <p>
+                Mocilo je dobar momak koji ide sa mnom na smjer
+            </p>
+        </div>
+        <br><br><br>
+        <div id="akordacija">
+            <h3>Neki tekstic</h3>
+                <div>
+                    <p>
+                        Jos jedan tekst
+                    </p>
+                </div>
+            <h3>Jos neki tekst</h3>
+                <div>
+                    <p>
+                       Jos neki tekst
+                    </p>
+                </div>
+            <h3>tekst</h3>
+                <div>
+                    <p>
+                        Neki tekst
+                    </p>
+                </div>
+        </div>
+</body>
+</html>

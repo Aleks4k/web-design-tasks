@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	font-family: 'Calibri Light', 'serif';
+	background-color: AliceBlue;
+}
+
+header {
+	width: 100%;
+	height: 100px;
+	background-color: #0048BA;
+	text-align: right;
+}
+
+footer{
+	width: 100%;
+	height: 100px;
+	background-color: #0048BA;
+	padding-top: 40px;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+#logo {
+	width: 12%;
+	float:left;
+	padding-top: 10px;
+}
+
+#h2_style {
+	display: inline-block;
+	color: white;
+	font-height: bold;
+	margin-top: 30px;
+	margin-right: 35%;
+}
+
+#h2_zaFotter{
+	display: inline-block;
+	color:white;
+	font-height: bold;
+}
+
+nav {
+	padding: 10px;
+	text-align: center;
+	background-color: #89CFF0;
+	height: 40px;
+}
+
+#lista_style{
+	list-style: none;
+}
+
+nav > ul > li{
+	display: inline-block;
+	margin-left: 20px;
+}
+
+nav > ul > li > a {
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+}
+
+nav > ul > li > a:hover {
+	color:blue;
+}
+
+#slika_main_style{
+	margin-left: auto;
+	margin-right: auto;
+	width: 85%;
+	margin-top: 35px;
+	margin-bottom: 45px;
+}
+
+#slika:hover{
+	border-bottom: 3px solid black;
+	border-right: 3px solid black;
+	cursor: pointer;
+}
+
+#slika {
+	width: 100%;
+	border-radius: 15px;
+}
+
+.drugi_div_style {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	background-color: Aquamarine;
+	margin-bottom: 40px;
+}
+
+.treci_div_style {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	background-color: Aquamarine;
+	margin-bottom: 40px;
+	padding: 30px 30px;
+}
+
+#tabela_style {
+	width: 90%;
+	height: 140px;
+	background-color: #FFFFFF
+}
+
+table, td {
+  border: 1px solid black;
+  border-spacing: 0;
+  text-align: center;
+}
+
+#lista_style2{
+	font-size: 100%;
+}
+
+#div1 {
+	width: 50%;
+	height: 160px;
+	display: inline-block;
+	margin-top: 25px;
+	margin-left: 55px;
+}
+#div2 {
+	display: inline-block;
+	float: right;
+	padding-top: 35px;
+	padding-right: 15%;
+
+}
+.paragrafic{
+	font-size: 150%;
+	display: inline-block;
+	Float: right;
+	margin-right: 10%;
+}
+.za_sliku{
+	width:20%;
+}
+
+.za_sliku:hover {
+	border-bottom: 2px solid black;
+	border-right: 2px solid black;
+	cursor: pointer;
+}
+#novistil{
+	padding-bottom: 20px;
+}
+.footer_logo{
+	float:right;
+	margin-right: 2%;
+}
+
+.footer_logo:hover{
+	width: 4%;
+}
